@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="PT_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetFlix</title>
+    <link rel="icon" href="netflix_emblem_transparent.png"/>
+    
+    <link rel="stylesheet" href="net.css/style.css">
+
+
+    <script>
+
+        console.log();{
+
+            alert("Seja Bem vindo !!!");
+        }
+        
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar">         
+                <img  id="logo" src="netflix2.png" alt="NetFlix" width="100px" height="55px">
+
+<!-- 
+    foram criados divs . dentro de divs e comandos para conseguir realizar aplicar a estilizacao dos comandos e das tasgs 
+-->
+                <div class="gradient"></div>
+            <select name="languages" id="select-languages">
+                <option value="ptbr">Português</option>
+                <option value="en">English</option>
+
+            </select>
+           <a href="login.html"><button id="btn-login">Entrar</button></a>
+        </nav>
+<div class="story-card">
+    <h1 class="story-card-title">
+        Filmes , Series e muito mais. <br>sem Limites.
+    </h1>
+
+    <h2 class="story-card-subtitle">
+        Assista onde quiser. Cancele quando quiser.
+    </h2>
+
+    <form class="form-container">
+        <h3 class="form-indivitation">Pronto para assistir ? Informe seu email para criar ou reiniciar sua assinatura.</h3>
+        <div class="form-container-email">
+            <input  id="input-email" action="javascript:sendMail();" name="pmForm" id="pmForm" method="post" type="text" placeholder="Email">
+            <button id="btn-form">
+                Vamos lá >
+            </button>
+        </div>
+    </form>
+
+    <script src="log.js">
+
+    </script>
+
+    <!--
+        criando outra div para continuar a pagina  !!!! 
+
+        
+
+    
+    -->
+
+
+</div>
+    </div>
+    </div>
+
+
+    <script>
+        var input-email = require('node-mandrill')('<your API Key>'); 
+
+function sendEmail ( _name, _email, _subject, _message) {
+    input-email('/messages/send', {
+        message: {
+            to: [{email: _email , name: _name}],
+            from_email: 'marcelo.ishida@yahoo.com.br',
+            subject: _subject,
+            text: _message
+        }
+    }, function(error, response){
+        if (error) console.log( error );
+        else console.log(response);
+    });
+}
+
+// define your own email api which points to your server.
+
+app.post( '/api/sendemail/', function(req, res){
+
+    var _name = req.body.name;
+    var _email = req.body.email;
+    var _subject = req.body.subject;
+    var _messsage = req.body.message;
+
+    //implement your spam protection or checks. 
+
+    sendEmail ( _name, _email, _subject, _message );
+
+});
+
+    </script>
+
+
+<script>
+
+    console.log();
+{
+    alert("Assista Séries e filmes");
+}
+</script>
+    
+</body>
+</html>
